@@ -1,0 +1,7 @@
+SELECT stationid, trucktype, SUM(total_waste_collected) AS total_waste
+FROM MyFactTrips
+GROUP BY 
+GROUPING SETS (stationid, 
+              trucktype),
+
+

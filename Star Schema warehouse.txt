@@ -1,0 +1,36 @@
+MyDimDate 				 
+---------                               
+dateid (pk)				
+date					
+year
+quarter
+quartername
+month
+monthname
+day
+weekday
+weekdayname
+
+MyDimZone
+----------
+stationid (pk)
+city
+zone
+
+MyDimWaste
+---------
+wasteid (pk)
+wastetype
+
+MyDimtruck
+--------
+truckid (pk)
+trucktype
+
+MyFactTrips 
+-----------
+tripid (pk)
+dateid (fk)
+stationid (fk)
+truckid (fk)
+wastecollected

@@ -1,0 +1,45 @@
+CREATE TABLE MyDimDate (
+    dateid INT PRIMARY KEY,
+    date DATE,
+    year INT,
+    quarter INT,
+    quartername VAR(2),
+    Month INT,
+    monthname VAR(12)
+    day INT,
+    Weekday INT,
+    weekdayname VAR(12)
+);
+
+
+CREATE TABLE MyDimWaste (
+    wasteid INT PRIMARY KEY,
+    wastetype VAR(10)
+);
+
+CREATE TABLE MyDimTruck (
+    truckid INT PRIMARY KEY,
+    trucktype VAR(10)
+);
+
+CREATE TABLE MyDimZone (
+    stationid INT PRIMARY KEY,
+    city VAR(30)
+    zone VAR(30)
+);
+
+
+CREATE TABLE MyFactTrips (
+    tripid INT PRIMARY KEY,
+    dateid INT,
+    wasteid INT,
+    truckid INT,
+    stationid INT,
+    wastecollected DECIMAL (10,2)
+    -- Foreign key references to dimension tables
+    FOREIGN KEY (dateid) REFERENCES MyDimDate (dateid),
+    FOREIGN KEY (wasteid) REFERENCES MyDimWaste (waseid),
+    FOREIGN KEY (truckid) REFERENCES MyDimtruck (truckid)
+    FOREIGN KEY (stationid) REFERENCES MyDimZone (stationid)
+);
+
